@@ -11,7 +11,9 @@ else if(response.body.error){
 callback('Unable to find location ,Try  Another',undefined);
 }
 else{
-    callback(undefined,response);
+    callback(undefined, response.body.daily.data[0].summary + ' It is currently ' + response.body.currently.temperature + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.')
 }
 });
 }
+
+module.exports = forecast;
