@@ -19,3 +19,10 @@ request({url:url,json:true},(error,response)=>{
     }
     
 })
+const geocodeUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Delhi.json?access_token=pk.eyJ1IjoicXR5OTkyNyIsImEiOiJjanhyZTExdHYwNzJ6M25tajA0dWhiejN5In0.TAuSNln5JlRFoRWoYUDxDQ&limit=1'
+request({url:geocodeUrl,json:true},(error,response)=>{
+console.log(response.body.features[0].center[0])
+console.log(response.body.features[0].center[1])
+console.log(response.body.features[0].place_name)
+
+})
