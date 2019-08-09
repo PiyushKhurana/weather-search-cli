@@ -1,3 +1,9 @@
+/**
+ * @file APP
+ * @version 1.0.0
+ */
+
+//Imports and Declarations
 const forecast = require('./api/forecast');
 const geocode = require('./api/geocode');
 

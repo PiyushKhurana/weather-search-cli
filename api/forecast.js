@@ -1,3 +1,9 @@
+/**
+ * @file Forecast 
+ * @version 1.0.0
+ */
+
+//Imports and Declarations
 const request = require('request');
 
 const forecast = (latitude,longitude,callback) => {
