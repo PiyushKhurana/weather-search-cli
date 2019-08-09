@@ -1,21 +1,25 @@
-
 const forecast = require('./api/forecast');
 const geocode = require('./api/geocode');
 
 const address = process.argv[2];
-if (!address){
+
+if ( !address){
     console.log('Enter a valid location')
-}else{
-geocode(address,(error,data)=>{
-    if(error){
-        return console.log(error);
-    }
-    forecast(data.latitude,data.longitude,(error,msg)=>{
+}
+else{
+    geocode(address,(error,data) => {
+
         if(error){
-            return console.log(error)
+            return console.log(error);
         }
-        console.log(msg);
-    })
-})
+        forecast(data.latitude,data.longitude,(error,msg) => {
+
+            if(error){
+                return console.log(error)
+            }
+            
+            console.log(msg);
+        });
+    });
 }
 
